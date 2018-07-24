@@ -10,8 +10,6 @@ export class AuthService {
 
   async createToken(user_account) {//其实这里的account就是e-mail
     const user: JwtPayload = { email: user_account };
-    console.log(user)
-    console.log("************************************----------------********************************")
     return jwt.sign(user, 'secretKey', { expiresIn: 3600 });//（Expiration Time）过期时间，用Unix时间戳表示
   }
 
